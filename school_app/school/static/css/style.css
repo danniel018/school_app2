@@ -65,8 +65,8 @@
  .sidebar-item .card:hover{
      background-color: #b0b1b6;
  }
- .navbar{
-     background-color: rgba(0, 0, 0, .25);
+ .navbar { 
+    background-color: rgb(19, 98, 134) !important; 
  
  }
  .navbar-brand {
@@ -75,7 +75,7 @@
      box-shadow: inset -1px 0 0 rgba(255, 254, 254, 0.925);
    }
  
- .navbar-brand .image{
+ .navbar-brand .image{ 
      max-width: 25%;
      height:25%;
    }
@@ -301,7 +301,7 @@
  
  
  h1,h2,h3,h4,h5,h6{
-     color: rgb(23, 63, 97);
+     color: rgb(8, 63, 90);
  }
  /* #card{
      margin-top: 80px;
