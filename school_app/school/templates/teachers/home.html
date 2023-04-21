@@ -4,6 +4,22 @@
 {% block content %}
 
 
+    {% for y in schedules  %}
+        <div class="row">
+            <div class="col-3">
+                <p>day: {{y.weekday}}</p>
+            </div>
+            <div class="col-3">
+                <p>day: {{y.start}}</p>
+
+            </div>
+            <div class="col-3">
+                <p>day: {{y.end}}</p>
+
+            </div>
+        </div>
+    {% endfor %}
+
     {% for x in data  %}
         <h4> {{x}} </h4>
     {% endfor %}

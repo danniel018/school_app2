@@ -113,6 +113,19 @@
  .navbar-text{
      padding: 50%;
  }
+ .notifications{
+    border-radius: 25px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #d41477;
+    display: flex;
+    justify-content: space-between;
+
+ }
+ .notifications-icon{
+    font-size: 1.3rem;
+    color: white;
+ }
  
  .user{
      padding-left: 50px; 

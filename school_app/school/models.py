@@ -146,3 +146,15 @@ class AnnouncementsChildren(models.Model):
     child = models.ForeignKey(Children, on_delete= models.DO_NOTHING)
     grade_group = models.ForeignKey(GradeGroups, on_delete= models.CASCADE)
     
+class ScheduleSubjects(models.Model):
+    class Meta:
+        db_table = 'schedule_subjects'
+    week_day = [('M','Monday'),('TU','Tuesday'),('W','Wednesday'),
+                         ('TH','Thursday'),('F','Friday')]
+
+    grade_subject = models.ForeignKey(GradesSubjects, on_delete=models.CASCADE)
+    weekday = models.CharField(max_length=2,choices=week_day, null = False)
+    weekday_iso = models.IntegerField(null = True)
+    start = models.CharField(max_length=8, null = True)
+    end = models.CharField(max_length=8, null = True)
+

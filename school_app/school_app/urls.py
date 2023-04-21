@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from school.auth import views as authviews
 
 teachers_urls = [
 
@@ -22,5 +23,6 @@ teachers_urls = [
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('school.urls'))
+    path('',include('school.urls')),
+    path('auth/',authviews.login_user,name= 'login')
 ]
