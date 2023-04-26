@@ -108,12 +108,12 @@ class GradesSubjects(models.Model):
 
 class Events(models.Model):
     class Meta:
-        db_table = 'class_events'
+        db_table = 'class_events'  
 
     event_type = models.CharField(max_length=10)
     name = models.CharField(max_length=50,null=False)
     description = models.CharField(max_length=100,null=True)
-    date = models.DateField(null=False)
+    date = models.DateField(null=False) 
     bimester = models.IntegerField(null=False)
     grade_subject = models.ForeignKey(GradesSubjects, on_delete = models.CASCADE) 
     
@@ -138,7 +138,7 @@ class Announcements(models.Model):
     teacher = models.ForeignKey(Users, on_delete=models.DO_NOTHING)
     filelink = models.DateField(max_length=256, null = True)
 
-class AnnouncementsChildren(models.Model):
+class AnnouncementsChildren(models.Model): 
     class Meta:
         db_table = 'announcements_children'
 
@@ -152,9 +152,22 @@ class ScheduleSubjects(models.Model):
     week_day = [('M','Monday'),('TU','Tuesday'),('W','Wednesday'),
                          ('TH','Thursday'),('F','Friday')]
 
-    grade_subject = models.ForeignKey(GradesSubjects, on_delete=models.CASCADE)
+    grade_subject = models.ForeignKey(GradesSubjects, on_delete=models.CASCADE,related_query_name='schedules')
     weekday = models.CharField(max_length=2,choices=week_day, null = False)
     weekday_iso = models.IntegerField(null = True)
     start = models.CharField(max_length=8, null = True)
-    end = models.CharField(max_length=8, null = True)
+    end = models.CharField(max_length=8, null = True)  
+
+
+class Reports(models.Model):
+
+    class Meta:
+        db_table = 'reports'
+
+    grade_subject = models.ForeignKey('GradesSubjects', on_delete=models.CASCADE,related_query_name='reports')
+    child = models.ForeignKey('Children', on_delete=models.CASCADE,related_query_name='reports')
+    created_at = models.DateTimeField(auto_now_add=True)
+    filelink = models.CharField(max_length=256, null=False)
+
+    
 
