@@ -6,8 +6,42 @@
 
     
     <div class="row">
-        <div class="col-6">
-            <h2>{{next}}</h2>
+        <div class="col-12 col-lg-4">
+            <div class="card next-class">
+              <div class="card-header"><h6>Your next Lesson</h6></div>
+              <div class="card-body">
+                <h4 class="card-title">{{next.data.grade_subject.grade_group.name}} 
+                  {{next.data.grade_subject.subject.name}}
+                </h4>
+                <p class="card-text">{{next.date}}</p>
+                <p class="card-text"> Classroom: {{next.data.grade_subject.grade_group.classroom}} </p>
+                <p class="card-text">Don't be late!</p>
+                
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8">
+            <div class="card text-center large-card">
+                <div class="card-header">
+                  <h6>Week Summary</h6> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{monday}} To {{friday}}</h5>
+                  <p class="card-text">this week you have:</p>
+                  <div class="week-summary">
+                    <p >Lessons to instruct: {{lessons}}</p>
+                    <p >Events created: {{events}}</p>
+                    <p >Laboratories: {{laboratories}}</p>
+                    <p >assessments: {{assessments}}</p>
+                    <p >isuued reports: {{issued_reports}}</p>
+                    <p >issued announcements: {{issued_announcements}}</p>  
+                  </div>    
+                </div>
+                <div class="card-footer" >
+                   More info in your general panel 
+                </div>
+              </div>
+
         </div>
         
     </div>
